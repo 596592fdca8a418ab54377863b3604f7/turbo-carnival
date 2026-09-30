@@ -1,0 +1,8 @@
+# DevTools CLI Requirements
+# All tools use Python standard library - no external dependencies required
+# Python 3.6+ is recommended
+
+# Optional: For enhanced functionality in future versions
+# pandas>=1.3.0
+# click>=8.0.0
+# rich>=10.0.0

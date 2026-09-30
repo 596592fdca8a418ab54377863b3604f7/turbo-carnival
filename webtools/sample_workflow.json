@@ -1,0 +1,50 @@
+[
+  {
+    "action": "variable",
+    "name": "base_url",
+    "value": "https://example.com"
+  },
+  {
+    "action": "scrape",
+    "url": "https://example.com",
+    "extract": ["title", "links"],
+    "save_as": "page_data"
+  },
+  {
+    "action": "log",
+    "message": "Page title:"
+  },
+  {
+    "action": "extract",
+    "from": "page_data",
+    "path": "title",
+    "save_as": "title"
+  },
+  {
+    "action": "log",
+    "message": "Title extracted:",
+    "from": "title"
+  },
+  {
+    "action": "extract",
+    "from": "page_data",
+    "path": "links",
+    "save_as": "links"
+  },
+  {
+    "action": "transform",
+    "from": "links",
+    "operation": "count",
+    "save_as": "link_count"
+  },
+  {
+    "action": "log",
+    "message": "Total links found:",
+    "from": "link_count"
+  },
+  {
+    "action": "save",
+    "from": "page_data",
+    "filename": "scraped_data.json"
+  }
+]
